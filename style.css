@@ -416,3 +416,203 @@ footer{
     color: #4D4D4D;
     transform: scale(1.1);
 }
+
+
+@media (max-width: 1400px) {
+    .container{
+        width: 100%;
+        padding: 10px 40px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .container{
+        padding: 10px 30px;
+        gap: 40px;
+    }
+    h1{
+        font-size: 55px;
+    }
+    h2{
+        font-size: 32px;
+    }
+    h3{
+        font-size: 36px;
+    }
+    .hero-text p{
+        width: 100%;
+        max-width: 400px;
+    }
+    .project-section{
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+    .project-card{
+        width: 320px;
+        height: auto;
+    }
+    .project-img{
+        width: 100%;
+        height: auto;
+    }
+    .about-section{
+        flex-wrap: wrap;
+    }
+    .right-txt{
+        padding-right: 0;
+    }
+    .tool-grid{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .timeline{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .timeline-card{
+        width: 260px;
+    }
+    .big-btn{
+        width: 100%;
+        max-width: 564px;
+        font-size: 32px;
+    }
+    .btn2{
+        margin-left: 0;
+    }
+}
+
+/* Small tablet / large phone */
+@media (max-width: 768px) {
+    body{
+        display: block;
+    }
+    .container{
+        padding: 10px 20px;
+        gap: 30px;
+    }
+    h1{
+        font-size: 42px;
+    }
+    h2{
+        font-size: 26px;
+    }
+    h3{
+        font-size: 28px;
+    }
+    h4{
+        font-size: 20px;
+    }
+    .navbar{
+        flex-wrap: wrap;
+        gap: 15px;
+        border-radius: 20px;
+        padding: 15px 20px;
+    }
+    .menu{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+    }
+    .hero{
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .hero-text{
+        align-items: center;
+    }
+    .hero-text p{
+        width: 100%;
+    }
+    .project-section{
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-card{
+        width: 100%;
+        max-width: 385px;
+    }
+    .about-section{
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .right-txt{
+        margin: 0;
+        align-items: center;
+    }
+    .right-txt h4{
+        font-size: 28px;
+    }
+    .right-txt p{
+        font-size: 16px;
+    }
+    .uiux ul{
+        justify-content: center;
+    }
+    .tool-grid{
+        flex-direction: column;
+        align-items: center;
+    }
+    .timeline{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+    }
+    .timeline-card{
+        width: 100%;
+        max-width: 320px;
+    }
+    .footer-content{
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .myinfo-footer{
+        width: 100%;
+        align-items: center;
+    }
+    .contact-info{
+        align-items: center;
+    }
+    .bottom{
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+    .container{
+        padding: 10px 15px;
+        gap: 25px;
+    }
+    h1{
+        font-size: 32px;
+    }
+    h2{
+        font-size: 22px;
+    }
+    h3{
+        font-size: 24px;
+    }
+    .btn, .nav-btn{
+        width: 100%;
+        margin-right: 0;
+    }
+    .project-card{
+        padding: 20px 15px;
+    }
+    .uiux ul li{
+        width: 100%;
+    }
+    .big-btn{
+        font-size: 22px;
+        height: 70px;
+    }
+}
