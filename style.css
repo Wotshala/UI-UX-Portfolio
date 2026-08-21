@@ -33,7 +33,7 @@ h4{
    font-family: 'Inter', sans-serif;
 }
 p{
-   font-size: 16px;
+   font-size: 14px;
     font-weight: 500;
     font-family: 'Inter', sans-serif;
     
@@ -64,6 +64,9 @@ section{
     justify-content: center;
     gap: 60px;
 } */
+ .hero-buttons{
+    margin-top: 20px;
+ }
 .btn{
      padding: 12px 20px;
     border: 2px solid white;
@@ -93,13 +96,14 @@ section{
 .navbar{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-radius: 30px;
     background-color: white;
     padding: 15px 35px;
     position: sticky;
 }
 .logo{
-    height: 100%;
+    
     width: auto;
 }
 .menu{
@@ -159,13 +163,15 @@ section{
     gap: 40px; 
 } */
 
-.project-section{
+.project-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Aligns cards to the left side */
+    gap: 20px;                 /* Creates uniform spacing between cards */
+    flex-wrap: wrap;             /* Allows cards to wrap cleanly on smaller screens */
 }
 .project-card{
     background-color: #1A1A1A;
-    padding: 25px 10px;
+    padding: 30px 20px;
     border-radius: 30px;
     width: 385px;
     height: 372px;
@@ -174,14 +180,22 @@ section{
     justify-content: space-between;
     text-decoration: none;
     color: inherit;
+    
+}
+.project-card p{
+    margin-top: -20px;
 }
 .project-card:hover{
     background-color: #464646;
 
 }
-.project-img{
-    width: 368px;
-    height: 225px;
+.project-img {
+    width: 344px;
+    height: 200px;
+    border-radius: 30px;
+    border: 1px solid red;
+    object-fit: cover; /* Zooms & crops to fit without distortion */
+    object-position: center; /* Centers the image inside the frame */
 }
 .viewbtn{
     align-self: center;
@@ -370,13 +384,14 @@ footer{
     gap: 10px;
 }
 .myinfo-footer h4{
-    font-size: 24px !important;
+    font-size: 20px !important;
 }
 .myinfo-footer h3{
-    font-size: 36px !important;
+    font-size: 32px !important;
+    text-align: left;
 }
 .myinfo-footer p{
-    font-size: 14px !important;
+    font-size: 12px !important;
 }
 .contact-info{
     display: flex;
@@ -392,9 +407,13 @@ footer{
 .contact-info a {
     color: white;
     text-decoration: none;
+    font-size: 14px;
 }
 .contact-info a:hover {
     color: #4D4D4D;
+}
+.contact-info h4{
+    font-size: 20px;
 }
 .bottom{
     display: flex;
@@ -615,4 +634,48 @@ footer{
         font-size: 22px;
         height: 70px;
     }
+}
+
+
+
+
+
+/* Breadcrumb */
+.breadcrumb {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #b3b3b3;
+    text-transform: uppercase;
+}
+
+.breadcrumb a {
+    color: white;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: #ff2d2d;
+    font-weight: 600;
+}
+
+/* Category Filter Layout */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    width: auto !important; /* Allows button width to expand based on filter label */
+    margin-right: 0 !important;
+}
+
+.filter-btn.active {
+    background-color: white;
+    color: black;
 }
