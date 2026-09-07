@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donut Website - Case Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    /* Enable normal sentence-case for readable text elements */
+p, 
+.styled-list li, 
+.subtitle, 
+.content-block, 
+.highlight-box p, 
+.flow-path p, 
+.card-box p, 
+.feature-card p {
+    text-transform: none !important; 
+    font-size: 16px;                  
+    line-height: 1.65;              
+    color: #CCCCCC;                 
+    font-weight: 400;                
+}
+
+/* Maintain clean spacing between paragraphs in content blocks */
+.content-block p + p,
+.card-box p + p {
+    margin-top: 12px;
+}
+
+/* Keep metadata & headers uppercase for visual punch */
+.meta-label, 
+.meta-val, 
+.image-label, 
+h1, h2, h3, h4, 
+.breadcrumb {
+    text-transform: uppercase;
+}
+.case-header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #b3b3b3;
+    line-height: 1.6;
+    max-width: 900px;
+}
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background-color: #1A1A1A;
+    padding: 25px 30px;
+    border-radius: 20px;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.meta-label {
+    font-family: 'Pixelify Sans', sans-serif;
+    color: #ff2d2d;
+    font-size: 20px;
+}
+
+.meta-val {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Structural Layouts */
+.case-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.two-col-grid,
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card-box {
+    background-color: #1A1A1A;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-box h4 {
+    color: #ff2d2d;
+}
+
+/* Feature Cards */
+.feature-card {
+    background: #1A1A1A;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+}
+
+.feature-num {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 32px;
+    color: #ff2d2d;
+}
+
+/* Styled Lists */
+.styled-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.styled-list li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.styled-list li::before {
+    content: "•";
+    color: #ff2d2d;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Highlight Box */
+.highlight-box {
+    background-color: #1A1A1A;
+    border-left: 4px solid #ff2d2d;
+    border-radius: 0 20px 20px 0;
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.highlight-box h4 {
+    color: #ff2d2d;
+}
+
+/* Flows */
+.flow-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.flow-path {
+    background-color: #1A1A1A;
+    border-radius: 20px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.flow-path h4 {
+    color: #ff2d2d;
+    font-size: 18px;
+}
+
+/* Image Containers & Placeholders */
+.image-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.image-label {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 20px;
+    color: #ff2d2d;
+}
+
+.image-container {
+    background-color: #1A1A1A;
+    border-radius: 20px;
+    border: 1px dashed #4D4D4D;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.placeholder-text {
+    color: #666;
+    font-size: 16px;
+}
+
+.image-caption {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Footer CTA */
+.case-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 0;
+    border-top: 1px solid #1A1A1A;
+}
+
+/* Mobile Responsiveness for Case Study Elements */
+@media (max-width: 768px) {
+    .meta-grid,
+    .two-col-grid,
+    .solution-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .case-header h1 {
+        font-size: 42px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation / Breadcrumb -->
+        <nav class="breadcrumb">
+            <a href="../index.html">← BACK TO WORK</a> / <span>CASE STUDY</span>
+        </nav>
+
+        <!-- Header -->
+        <header class="case-header">
+            <h1>DONUT WEBSITE</h1>
+            <p class="subtitle">Designing an e-commerce experience that encourages bulk purchasing through smart UX patterns and a "Build Your Box" feature.</p>
+        </header>
+
+        <!-- Metadata Grid -->
+        <div class="meta-grid">
+            <div class="meta-item">
+                <p class="meta-label">ROLE</p>
+                <p class="meta-val">UI/UX Designer</p>
+            </div>
+            <div class="meta-item">
+                <p class="meta-label">TOOLS</p>
+                <p class="meta-val">Figma</p>
+            </div>
+            <div class="meta-item">
+                <p class="meta-label">TYPE</p>
+                <p class="meta-val">E-commerce Concept</p>
+            </div>
+            <div class="meta-item">
+                <p class="meta-label">TIMELINE</p>
+                <p class="meta-val">3 Months</p>
+            </div>
+        </div>
+
+        <!-- Overview Section -->
+        <section class="case-section">
+            <h2>OVERVIEW</h2>
+            <div class="content-block">
+                <p>A local donut shop was transitioning from offline-only ordering to an online sales model. They needed a digital experience that would feel simple and authentic while encouraging customers to purchase in bulk—specifically boxes of 6 or 12 donuts at incentivized pricing.</p>
+                <p>The challenge: How do we make bulk purchasing feel like the obvious choice without sacrificing customization?</p>
+            </div>
+        </section>
+
+        <!-- The Problem -->
+        <section class="case-section">
+            <h2>THE PROBLEM</h2>
+            <div class="two-col-grid">
+                <div class="card-box">
+                    <h4>FOR CUSTOMERS</h4>
+                    <ul class="styled-list">
+                        <li>Browse donuts without visiting the shop</li>
+                        <li>Purchase individual donuts OR multiple flavors</li>
+                        <li>Easily understand box options and pricing</li>
+                        <li>Customize orders without friction</li>
+                    </ul>
+                </div>
+                <div class="card-box">
+                    <h4>FOR THE BUSINESS</h4>
+                    <ul class="styled-list">
+                        <li>Establish an online ordering channel</li>
+                        <li>Encourage larger orders (boxes vs. singles)</li>
+                        <li>Increase average order value</li>
+                        <li>Maintain the shop's local, approachable personality</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>THE CORE QUESTION</h4>
+                <p>How might we help a local donut shop transition to online ordering while making bulk purchases feel like the preferred choice?</p>
+            </div>
+        </section>
+
+        <!-- Design Approach -->
+        <section class="case-section">
+            <h2>DESIGN APPROACH</h2>
+            <div class="content-block">
+                <p>I designed two distinct purchasing paths—individual and box ordering—allowing customers to choose what works for them. The key insight: don't force people through the same flow.</p>
+            </div>
+            
+            <div class="card-box">
+                <h4>CORE PRINCIPLES</h4>
+                <ul class="styled-list">
+                    <li>Visual hierarchy prioritizes images, names, pricing, and actions</li>
+                    <li>Reusable components for cards, buttons, quantity controls, and box selectors</li>
+                    <li>Simple, friendly personality—built for first-time online customers</li>
+                    <li>Clear pricing to highlight box value proposition</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Wireframes Section -->
+        <section class="case-section">
+    <h2>WIREFRAMES & STRUCTURE</h2>
+    <p>Before moving to high-fidelity design, I mapped out user flows and key screens to validate the two-path approach.</p>
+    
+    <div class="image-section">
+        <div class="image-label">📐 WIREFRAME REFERENCE</div>
+        
+        <!-- Interactive Link Card -->
+        <div class="wireframe-link-card">
+            <div class="wireframe-info">
+                <i class="fa-brands fa-figma wireframe-icon"></i>
+                <div>
+                    <h4>FIGMA WIREFRAMES & LOW-FI FLOWS</h4>
+                    <p>Explore the full interactive wireframes, component layouts, and early iteration flows directly in Figma.</p>
+                </div>
+            </div>
+            <a href="YOUR_FIGMA_WIREFRAME_LINK_HERE" target="https://www.figma.com/board/ut7hfhhKin2OXHNRMLIflK/Untitled?node-id=0-1&t=dcKColr9Bo4GSZio-1" class="btn">
+                VIEW IN FIGMA <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        </div>
+
+        <p class="image-caption">Early wireframes explored layout options for the product grid, box customizer, and cart flows.</p>
+    </div>
+</section>
+
+        <!-- User Flows -->
+        <section class="case-section">
+            <h2>USER FLOWS</h2>
+            <div class="flow-container">
+                <div class="flow-path">
+                    <h4>PATH 1: INDIVIDUAL PURCHASE</h4>
+                    <p>Home → Browse Donuts → Select Product → Add to Cart → Checkout</p>
+                </div>
+                <div class="flow-path">
+                    <h4>PATH 2: BUILD YOUR BOX</h4>
+                    <p>Home → Build Your Box → Select Box Size (6 or 12) → Choose Flavors → Review Box → Add to Cart → Checkout</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Solution -->
+        <section class="case-section">
+            <h2>THE SOLUTION</h2>
+            <p>The centerpiece: a dedicated <strong>"Build Your Box"</strong> experience that makes bulk purchasing frictionless and valuable.</p>
+
+            <div class="solution-grid">
+                <div class="feature-card">
+                    <div class="feature-num">01</div>
+                    <h4>BOX SIZING & PRICING</h4>
+                    <p>Clear options: Box of 6 or Box of 12, each with transparent fixed pricing to highlight cost savings.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-num">02</div>
+                    <h4>CUSTOM FLAVOR SELECTION</h4>
+                    <p>Customers mix and match any flavors with real-time feedback keeping them engaged.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-num">03</div>
+                    <h4>SMART VISUAL FEEDBACK</h4>
+                    <p>Real-time calculations show savings vs. individual pricing instantly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-num">04</div>
+                    <h4>SIMPLIFIED NAVIGATION</h4>
+                    <p>Two entry points reduce cognitive load with zero unnecessary category depth.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Design System / Showcase -->
+        
+    
+    <section class="case-section">
+    <h2>DESIGN SHOWCASE</h2>
+    
+    <div class="image-section">
+        <div class="image-label">🎨 HOMEPAGE & BUILD YOUR BOX DESIGN</div>
+        
+        <!-- High-res PNG export from Figma -->
+        <div class="showcase-card">
+            <img src="assets/images/donute.PNG" alt="Donut Bites Design Showcase" class="showcase-img">
+        </div>
+
+        <div class="prototype-fallback-link">
+            <p class="image-caption">Want to test the micro-interactions, buttons, and user flows live?</p>
+            <a href="https://www.figma.com/proto/E8J9JEf1CbyE6cIZruC7QV/Donut-Bites?node-id=24-239&p=f&viewport=-116%2C285%2C0.05&t=RR3Iw0VVlTYsoD5x-1&scaling=contain&content-scaling=fixed&starting-point-node-id=24%3A239&page-id=0%3A1" target="_blank" class="btn">
+                FIGMA PROTOTYPE ↗
+            </a>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Key Design Decisions -->
+        <section class="case-section">
+            <h2>KEY DECISIONS</h2>
+            <div class="card-box">
+                <h4>WHY NOT PRE-SET BUNDLES?</h4>
+                <p>Pre-set boxes limit customization. Customers already know what they like—letting them build it increases conversion.</p>
+            </div>
+            <div class="card-box">
+                <h4>WHY FIXED BOX PRICING?</h4>
+                <p>Customers don't want to do mental math while ordering. A fixed price makes value instantly clear and removes friction.</p>
+            </div>
+        </section>
+
+        <!-- Footer Call-to-Action -->
+        <footer class="case-footer">
+            <h3>WANT TO SEE MORE WORK?</h3>
+            <a href="../index.html" class="btn">BACK TO PORTFOLIO</a>
+        </footer>
+    </div>
+</body>
+</html>
